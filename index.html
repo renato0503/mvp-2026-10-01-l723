@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVP Mapeamento de Processos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Mapeamento de Processos</h1>
+      <div class="header-actions">
+        <button id="btn-export" class="btn btn-primary">Exportar JSON</button>
+        <button id="btn-clear" class="btn btn-danger">Limpar</button>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <aside class="sidebar">
+        <h2>Biblioteca</h2>
+        <div class="shape-list">
+          <div class="shape-item" draggable="true" data-type="start">
+            <svg viewBox="0 0 40 24" width="40" height="24"><rect x="2" y="2" width="36" height="20" rx="10" fill="#4CAF50" stroke="#388E3C" stroke-width="2"/></svg>
+            <span>Início</span>
+          </div>
+          <div class="shape-item" draggable="true" data-type="task">
+            <svg viewBox="0 0 40 24" width="40" height="24"><rect x="2" y="2" width="36" height="20" rx="2" fill="#2196F3" stroke="#1565C0" stroke-width="2"/></svg>
+            <span>Tarefa</span>
+          </div>
+          <div class="shape-item" draggable="true" data-type="decision">
+            <svg viewBox="0 0 40 24" width="40" height="24"><polygon points="20,2 38,12 20,22 2,12" fill="#FF9800" stroke="#F57C00" stroke-width="2"/></svg>
+            <span>Decisão</span>
+          </div>
+          <div class="shape-item" draggable="true" data-type="end">
+            <svg viewBox="0 0 40 24" width="40" height="24"><rect x="2" y="2" width="36" height="20" rx="10" fill="#F44336" stroke="#C62828" stroke-width="2"/></svg>
+            <span>Fim</span>
+          </div>
+        </div>
+        <div class="instructions">
+          <h3>Instruções</h3>
+          <ul>
+            <li>Arraste formas para a área de trabalho</li>
+            <li>Clique em um nó para selecionar</li>
+            <li>Arraste da borda de um nó para outro para conectar</li>
+            <li>Duplo clique para editar o texto</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="canvas-container">
+        <div id="canvas" class="canvas">
+          <svg id="connections" class="connections-layer"></svg>
+          <div id="nodes" class="nodes-layer"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
